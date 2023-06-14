@@ -4,30 +4,71 @@
     padding: 0;
 }
 
+:root {
+    --headingColor: chocolate;
+    --subHeadingColor: crimson;
+    --paragraphColor: rgb(43, 27, 18);
+    --headingFontSize: 30px;
+    --subHeadingFontSize: 23px;
+    --paragraphFontSize: 18px;
+    --sectionPadding: 15px;
+}
+
 body {
     margin: 0;
     padding: 0;
 }
 
 .heading {
-    font-size: 30px;
+    font-size: var(--headingFontSize);
     text-align: center;
-    color: chocolate;
-    margin-bottom: 20px;
+    color: var(--headingColor);
+    margin-bottom: 50px;
+}
+
+.headingBottom {
+    margin-top: -45px;
+    text-align: center;
+    color: var(--headingColor);
+    font-weight: 700;
+}
+
+.heading span {
+    position: relative;
+}
+
+.heading span::after {
+    right: -50px;
+    position: absolute;
+    content: '';
+    top: 49px;
+    width: 190px;
+    height: 2px;
+    background: var(--headingColor);
+}
+
+.heading span::before {
+    left: -50px;
+    position: absolute;
+    content: '';
+    top: 49px;
+    width: 190px;
+    height: 2px;
+    background: var(--headingColor);
 }
 
 .subHeading {
-    font-size: 30px;
+    font-size: var(--subHeadingFontSize);
     text-align: center;
-    color: crimson;
-    margin-bottom: 20px;
+    color: var(--subHeadingColor);
+    margin-bottom: var(--sectionPadding);
 }
 
 .paragraph {
-    font-size: 15px;
+    font-size: var(--paragraphFontSize);
     text-align: center;
-    color: rgb(43, 27, 18);
-    margin-bottom: 20px;
+    color: var(--paragraphColor);
+    margin-bottom: var(--sectionPadding);
     padding: 0 50px 20px 50px;
 }
 
@@ -60,9 +101,24 @@ body {
     margin: 30px 0 30px 130px;
 }
 
-.list li:nth-child(1) {
-    color: rgb(59, 77, 158);
+.list li a {
+    color: blueviolet;
+    transition: all linear .3s;
+    text-decoration: none;
+}
+
+.list li:nth-child(1) a {
+    color: rgb(59, 77, 158) !important;
     font-weight: 700;
+}
+
+.list li a:hover {
+    color: green;
+}
+
+.list li a:active {
+    color: #fff;
+    background-color: red;
 }
 
 .image {
